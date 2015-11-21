@@ -1,0 +1,76 @@
+<div class="view">
+
+    <div class="poles">
+        <div class="pole left-pole"></div>
+        <div class="pole right-pole"></div>
+    </div>
+
+    <div class="content-details">
+        <div class="back-btn"><md-button href="#me" aria-label="back" class="md-raised md-warn"><ng-md-icon icon="arrow_back" style="fill:white"></ng-md-icon></md-button></div>
+        <div class="photo"><div class="b64p"></div></div>
+        <div class="related">
+            <h3>Related</h3>
+            <ul>
+                <li><a href="http://dediserv.eu">http://dediserv.eu</a></li>
+                <li><a href="http://www.aselsan.com.tr/">http://www.aselsan.com.tr/</a></li>
+                <li>http://lab.mhmdt.com/voteapp</li>
+            </ul>
+        </div>
+        <div><span class="name">Muhammed Tanrıkulu</span><br><span
+                class="job-title">Mobile & Web Application Developer</span></div>
+        <md-content layout-padding style=" padding:24px 24px 0 24px" class="content-info">
+            <p>I’m a Computer Engineer that loves develop mobile & web applications. My motivations are support new ideas and build them.</p>
+            <p>My work experience includes mobile development, web apps in HTML, experimental JS projects, server side scripting.</p>
+            <p>During my time with Dediserv, I led the development of both small and large-scale projects for clients.</p>
+            <p>I am an active part of the web development community and share the source code for most of my work on GitHub and JsFiddle.</p>
+            </br>
+            <p><h2>Experiences</h2></p>
+            <ul>
+                <li ng-repeat="work in works">
+                    <h3>{{work.company}} <em>({{work.date}})</em></h3>
+                    <p>{{work.position}}</p>
+                    <hr>
+                </li>
+            </ul>
+            <p><h2>Skill Set</h2></p>
+            <ul>
+                <li ng-repeat="l in languages">
+                    <p>{{l.name}} <ng-md-icon style="float: right" ng-repeat="n in [] | range:l.rate" icon="star_rate"></ng-md-icon></p>
+                </li>
+            </ul>
+            </br>
+        </md-content>
+        <div class="social-material-menu">
+        <md-fab-speed-dial ng-hide="hidden" md-direction="right" class="md-fling">
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-warn">
+                    <md-tooltip md-direction="top">Menu</md-tooltip>
+                    <ng-md-icon icon="menu" style="fill: white"></ng-md-icon>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <div ng-repeat="item in items">
+                    <md-button aria-label="{{item.name}}" class="md-fab md-raised md-mini"
+                               ng-click="openDialog($event, item)">
+                        <md-tooltip md-direction="{{item.direction}}">{{item.name}}</md-tooltip>
+                        <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                    </md-button>
+                </div>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+        </div>
+    </div>
+    <script type="text/ng-template" id="dialog.html">
+        <md-dialog>
+            <md-dialog-content>Hello User! You clicked {{dialog.item.name}}.</md-dialog-content>
+            <div class="md-actions">
+                <md-button aria-label="Close dialog" ng-click="dialog.close()" class="md-primary">
+                    Close Greeting
+                </md-button>
+                <md-button aria-label="Submit dialog" ng-click="dialog.submit()" class="md-primary">
+                    Submit
+                </md-button>
+            </div>
+        </md-dialog>
+    </script>
+</div>
