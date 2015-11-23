@@ -1,4 +1,4 @@
-# mhmdt.com — personal website using angularjs
+# mhmdt.com — personal website using angularjs [![Build Status](https://travis-ci.org/mdtanrikulu/mhmdt.com.svg?branch=master)](https://travis-ci.org/mdtanrikulu/mhmdt.com)
 
 
 
