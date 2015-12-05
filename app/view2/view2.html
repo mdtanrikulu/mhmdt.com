@@ -34,8 +34,8 @@
             </ul>
             <p><h2>Skill Set</h2></p>
             <ul>
-                <li ng-repeat="l in languages">
-                    <p>{{l.name}} <ng-md-icon style="float: right" ng-repeat="n in [] | range:l.rate" icon="star_rate"></ng-md-icon></p>
+                <li ng-repeat="l in languages" style="width: 500px;">
+                    <p class="split-para">{{l.name}}<span><ng-md-icon ng-repeat="n in [] | range:l.rate" icon="star_rate"></ng-md-icon></span></p>
                 </li>
             </ul>
             </br>
