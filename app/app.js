@@ -1,6 +1,6 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
+
 angular.module('myApp', [
     'ngRoute',
     'ngAnimate',
@@ -46,14 +46,7 @@ angular.module('myApp', [
                     '   </div>' +
                     '</md-dialog>'
                 }
-                //md.alert()
-                //    .parent(angular.element(document.querySelector('#popupContainer')))
-                //    .clickOutsideToClose(true)
-                //    .title('Made with')
-                //    .content('AngularJS, AngularJS Loader, AngularJS Mocks, AngularJS Route, Html5 Boilerplate, ngMaterial')
-                //    .ariaLabel('Alert Dialog Demo')
-                //    .ok('Got it!')
-                //    .targetEvent(ev)
+
             );
         };
 }])
