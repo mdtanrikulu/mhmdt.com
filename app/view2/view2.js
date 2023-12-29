@@ -11,13 +11,14 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('View2Ctrl', ['$scope','$mdDialog',function($scope, $mdDialog) {
         var self = this;
-        $scope.hidden = false;
-        $scope.works = [
+        // Use the self variable for the consistent controllerAs syntax
+        self.hidden = false;
+        self.works = [
             {company:'Dediserv', date:'09/2014 - Current', position:'Mobile & Web Application Developer'},
             {company:'DT Group', date:'01/2014 - 08/2014', position:'Mobile & Web Application Developer'},
             {company:'Aselsan', date:'09/2013 - 11/2013', position:'Intern Engineer'},
         ];
-        $scope.languages = [
+        self.languages = [
             {name:'AngularJS', rate:"5"},
             {name:'JavaScript', rate:"4"},
             {name:'Android', rate:"4"},
@@ -28,14 +29,14 @@ angular.module('myApp.view2', ['ngRoute'])
             {name:'Nginx', rate:"2"},
             {name:'Tomcat', rate:"2"}
         ];
-        $scope.items = [
+        self.items = [
             {name: "Linkedin", icon: "linkedin", direction: "down" },
             {name: "Twitter", icon: "twitter", direction: "top" },
             {name: "Facebook", icon: "facebook", direction: "down" },
             {name: "Google Hangout", icon: "hangouts", direction: "top" },
             {name: "Lab", icon: "laptop_mac", direction: "down" },
         ];
-        $scope.openDialog = function($event, item) {
+        self.openDialog = function($event, item) {
             // Show the dialog
             $mdDialog.show({
                 clickOutsideToClose: true,
@@ -59,11 +60,6 @@ angular.module('myApp.view2', ['ngRoute'])
     .filter('range', function() {
         return function(input, total) {
             total = parseInt(total);
-
-            for (var i=0; i<total; i++) {
-                input.push(i);
-            }
-
-            return input;
+            return Array.from({length: total}, (_, i) => i);
         };
     });
