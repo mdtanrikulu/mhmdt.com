@@ -63,3 +63,4 @@ angular.module('myApp.view2', ['ngRoute'])
             return Array.from({length: total}, (_, i) => i);
         };
     });
+\n
